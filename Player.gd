@@ -1,9 +1,9 @@
 extends RigidBody2D
 
-const jump_impulses = [-110, -90]
+const jump_impulses = [-110 * 2, -90 * 2]
 const max_jumps = 2
 const ground_speed = 20
-const air_speed = 5
+const air_speed = 10
 const max_ground_speed = 170
 const max_air_speed = 100
 const ground_damping = 0.7
@@ -14,6 +14,7 @@ var jumps = 0
 func _ready():
 	mode = RigidBody2D.MODE_CHARACTER
 	friction = 0
+	gravity_scale = 3
 
 func _physics_process(delta):
 	if is_grounded():
